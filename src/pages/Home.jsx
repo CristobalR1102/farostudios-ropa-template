@@ -33,11 +33,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f5f3ef] font-sans">
-      <div className="bg-[#c9a84c] text-[#0a0a0a] text-center text-[11px] font-bold tracking-widest uppercase py-2 px-4">
-        Demo de @cristobalr1102 · Así se vería tu tienda ·{' '}
-        <a href="/" className="underline underline-offset-2">Quiero la mía</a>
-        {' · '}
-        <a href="/demo/admin" className="underline underline-offset-2">Ver panel admin</a>
+      <div className="bg-[#c9a84c] text-[#0a0a0a] py-2.5 px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[11px] font-bold tracking-widest uppercase text-center">
+        <span>
+          Demo de @cristobalr1102 · Así se vería tu tienda ·{' '}
+          <a href="/" className="underline underline-offset-2">Quiero la mía</a>
+        </span>
+        <a
+          href="/demo/admin"
+          className="bg-[#0a0a0a] text-[#c9a84c] px-4 py-2 rounded-full text-xs tracking-widest hover:bg-[#1a1a1a] transition-colors"
+        >
+          Ver panel admin
+        </a>
       </div>
       <Header config={config} cartCount={cart.length} onCartOpen={() => setCartOpen(true)} />
 
