@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
+import { getConfig, getProducts, getReviews } from '../lib/demoStore'
 import Header from '../components/Header'
 import FilterBar from '../components/FilterBar'
 import ProductCard from '../components/ProductCard'
@@ -13,21 +13,11 @@ export default function Home() {
   const [filter, setFilter] = useState('Todo')
   const [cart, setCart] = useState([])
   const [cartOpen, setCartOpen] = useState(false)
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function load() {
-      const [{ data: cfg }, { data: prods }, { data: revs }] = await Promise.all([
-        supabase.from('store_config').select('*').single(),
-        supabase.from('products').select('*').order('created_at'),
-        supabase.from('reviews').select('*').order('created_at'),
-      ])
-      setConfig(cfg)
-      setProducts(prods || [])
-      setReviews(revs || [])
-      setLoading(false)
-    }
-    load()
+    setConfig(getConfig())
+    setProducts(getProducts())
+    setReviews(getReviews())
   }, [])
 
   const categories = [...new Set(products.map(p => p.category).filter(Boolean))]
@@ -41,19 +31,13 @@ export default function Home() {
     setCart(prev => prev.filter(x => x.uid !== uid))
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
-        <span className="text-[#c9a84c] tracking-widest uppercase text-sm animate-pulse">Cargando...</span>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-[#f5f3ef] font-sans">
       <div className="bg-[#c9a84c] text-[#0a0a0a] text-center text-[11px] font-bold tracking-widest uppercase py-2 px-4">
         Demo de @cristobalr1102 · Así se vería tu tienda ·{' '}
         <a href="/" className="underline underline-offset-2">Quiero la mía</a>
+        {' · '}
+        <a href="/demo/admin" className="underline underline-offset-2">Ver panel admin</a>
       </div>
       <Header config={config} cartCount={cart.length} onCartOpen={() => setCartOpen(true)} />
 

@@ -135,9 +135,6 @@ export default function Landing() {
         <div className="grid gap-5 max-w-5xl mx-auto" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))' }}>
           {FEATURES.map((f, i) => (
             <div key={i} className="bg-[#f9f8f6] border border-[#ebe8e1] rounded-lg p-5">
-              <div className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center mb-3">
-                <i className={`ti ${f.icon} text-[#c9a84c] text-lg`} />
-              </div>
               <div className="text-sm font-bold uppercase tracking-wide mb-1.5">{f.title}</div>
               <p className="text-[13px] text-[#777] leading-relaxed">{f.text}</p>
             </div>
