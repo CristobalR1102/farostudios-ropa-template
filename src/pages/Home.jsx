@@ -51,6 +51,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f5f3ef] font-sans">
+      <div className="bg-[#c9a84c] text-[#0a0a0a] text-center text-[11px] font-bold tracking-widest uppercase py-2 px-4">
+        Demo de @cristobalr1102 · Así se vería tu tienda ·{' '}
+        <a href="/" className="underline underline-offset-2">Quiero la mía</a>
+      </div>
       <Header config={config} cartCount={cart.length} onCartOpen={() => setCartOpen(true)} />
 
       {/* Hero */}
@@ -77,7 +81,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#0a0a0a] text-[#555] text-center py-5 text-[11px] tracking-widest uppercase">
-        Hecho con ♥ por <span className="text-[#c9a84c]">FaroStudios</span>
+        Hecho con ♥ por <span className="text-[#c9a84c]">@cristobalr1102</span>
       </footer>
 
       {cartOpen && (

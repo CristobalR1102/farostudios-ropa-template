@@ -1,6 +1,6 @@
-# FaroStudios · Ropa Template 🛍
+# @cristobalr1102 · Ropa Template 🛍
 
-Template de tienda de ropa para venta por WhatsApp e Instagram. Desarrollado por **FaroStudios**.
+Landing de venta + template de tienda de ropa para venta por WhatsApp e Instagram.
 
 ## Stack
 - React + Vite + TailwindCSS
@@ -51,8 +51,12 @@ Conectar repo, agregar las variables de entorno, listo.
 ## Rutas
 | Ruta | Descripción |
 |------|-------------|
-| `/` | Tienda pública |
+| `/` | Landing de venta (vende el template/servicio a dueñas de tiendas de ropa en Instagram) |
+| `/demo` | Tienda pública funcional (demo en vivo) |
 | `/admin` | Panel admin (requiere login) |
 
+### Configurar la landing
+El WhatsApp e Instagram de contacto se editan en las constantes al inicio de [`src/pages/Landing.jsx`](src/pages/Landing.jsx).
+
 ---
-*Iluminamos tu presencia digital · FaroStudios*
+*@cristobalr1102*

@@ -123,7 +123,7 @@ export default function Admin() {
   if (!session) return (
     <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        <p className="text-[#c9a84c] text-center tracking-widest uppercase text-sm font-bold mb-8">Admin · FaroStudios</p>
+        <p className="text-[#c9a84c] text-center tracking-widest uppercase text-sm font-bold mb-8">Admin · @cristobalr1102</p>
         <form onSubmit={handleLogin} className="flex flex-col gap-3">
           <input className={inputClass} type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
           <input className={inputClass} type="password" placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} required />
